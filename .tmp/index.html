@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html data-ng-app="frontend">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Invoicate</title>
+    <!-- inject:vendor:css -->
+    <link rel="stylesheet" href="/bootswatch-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" href="/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="/bootstrap-css-only/css/bootstrap.css">
+    <link rel="stylesheet" href="/textAngular/src/textAngular.css">
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/styles/modal.css">
+    <link rel="stylesheet" href="/css/core/auth/login/login.css">
+    <link rel="stylesheet" href="/css/core/auth/signup/signup.css">
+    <!-- endinject -->
+  </head>
+
+  <body data-ng-cloak class="ng-cloak">
+    <div data-ui-view="header"></div>
+    <div class="dashboard-navigation-left" data-ui-view="pageNavigation"></div>
+    <div class="container main-container">
+      <div data-ui-view="content"></div>
+    </div>
+    <div data-ui-view="footer"></div>
+
+    <script>
+      (function onLoad() {
+        var io;
+
+        Object.defineProperty(window, 'io', {
+          get: function get() {
+            return io;
+          },
+          set: function set(value) {
+            var sails;
+
+            io = value;
+
+            Object.defineProperty(io, 'sails', {
+              get: function get() {
+                return sails;
+              },
+              set: function set(value) {
+                sails = value;
+
+                sails.url = 'http://localhost:1337';
+              }
+            });
+          }
+        });
+      })();
+    </script>
+
+    <!-- inject:vendor:js -->
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootswatch-dist/js/bootstrap.js"></script>
+    <script src="/lodash/lodash.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
+    <script src="/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+    <script src="/angular-ui-utils/ui-utils.js"></script>
+    <script src="/moment/moment.js"></script>
+    <script src="/angular-bootstrap-show-errors/src/showErrors.js"></script>
+    <script src="/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="/rangy/rangy-core.js"></script>
+    <script src="/rangy/rangy-classapplier.js"></script>
+    <script src="/rangy/rangy-highlighter.js"></script>
+    <script src="/rangy/rangy-selectionsaverestore.js"></script>
+    <script src="/rangy/rangy-serializer.js"></script>
+    <script src="/rangy/rangy-textrange.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/sails.io.js/dist/sails.io.js"></script>
+    <script src="/angularSails/dist/ngsails.io.js"></script>
+    <script src="/ngstorage/ngStorage.js"></script>
+    <script src="/highcharts/highcharts.js"></script>
+    <script src="/highcharts/highcharts-more.js"></script>
+    <script src="/highcharts/modules/exporting.js"></script>
+    <script src="/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="/angular-moment/angular-moment.js"></script>
+    <script src="/textAngular/src/textAngular.js"></script>
+    <script src="/textAngular/src/textAngular-sanitize.js"></script>
+    <script src="/textAngular/src/textAngularSetup.js"></script>
+    <script src="/bootbox/bootbox.js"></script>
+    <script src="/ngBootbox/dist/ngBootbox.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="/app.js"></script>
+    <script src="/core/auth/signup/signup.js"></script>
+    <script src="/core/auth/signup/signup-controllers.js"></script>
+    <script src="/core/auth/services/services.js"></script>
+    <script src="/core/auth/services/UserService.js"></script>
+    <script src="/core/auth/services/AuthService.js"></script>
+    <script src="/core/auth/login/login.js"></script>
+    <script src="/core/auth/login/login-controllers.js"></script>
+    <script src="/dashboard/reports/reports.js"></script>
+    <script src="/dashboard/invoices/invoices.js"></script>
+    <script src="/dashboard/home/home.js"></script>
+    <script src="/dashboard/estimates/home.js"></script>
+    <script src="/dashboard/bills/home.js"></script>
+    <script src="/core/services/services.js"></script>
+    <script src="/core/services/SocketHelperService.js"></script>
+    <script src="/core/services/MessageService.js"></script>
+    <script src="/core/services/ListConfigService.js"></script>
+    <script src="/core/services/HttpStatusService.js"></script>
+    <script src="/core/services/DataService.js"></script>
+    <script src="/core/models/models.js"></script>
+    <script src="/core/models/DataModel.js"></script>
+    <script src="/core/libraries/libraries.js"></script>
+    <script src="/core/libraries/LoDash.js"></script>
+    <script src="/core/layout/layout.js"></script>
+    <script src="/core/layout/layout-services.js"></script>
+    <script src="/core/layout/layout-directives.js"></script>
+    <script src="/core/layout/layout-controllers.js"></script>
+    <script src="/core/interceptors/interceptors.js"></script>
+    <script src="/core/interceptors/ErrorInterceptor.js"></script>
+    <script src="/core/interceptors/AuthInterceptor.js"></script>
+    <script src="/core/error/error.js"></script>
+    <script src="/core/error/error-controllers.js"></script>
+    <script src="/core/filters/filters.js"></script>
+    <script src="/core/directives/directives.js"></script>
+    <script src="/core/directives/ListSearch.js"></script>
+    <script src="/core/dependencies/dependencies.js"></script>
+    <script src="/core/constants/BackendConfig.js"></script>
+    <script src="/core/constants/AccessLevels.js"></script>
+    <script src="/core/auth/auth.js"></script>
+    <script src="/core/components/components.js"></script>
+    <script src="/core/components/FocusOn.js"></script>
+    <script src="/admin/loginHistory/login-history.js"></script>
+    <script src="/admin/loginHistory/login-history-models.js"></script>
+    <script src="/admin/loginHistory/login-history-controllers.js"></script>
+    <script src="/dashboard/dashboard.js"></script>
+    <script src="/core/core.js"></script>
+    <script src="/admin/admin.js"></script>
+    <script src="/frontend-templates.js"></script>
+    <!-- endinject -->
+  
+<script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
+</body>
+
+</html>

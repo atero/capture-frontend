@@ -1,0 +1,20 @@
+<header>
+  <div class="navbar navbar-fixed-top">
+    <div>
+
+      <ul class="nav navbar-nav pull-right">
+        <h2>{{title}}</h2>
+        <li class="" data-ng-show="auth.isAuthenticated()">
+          <a href="#" data-ng-click="logout()">Logout</a>
+        </li>
+
+        <li class="" data-ui-sref-active="active" data-ng-show="auth.isAuthenticated()">
+          <a href="#" data-ui-sref="profile.edit"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="navbar-header">
+  <a href="/" class="navbar-brand"><img src="assets/invoicate-logo-notext.svg" alt="" /> {{user().firstName}} {{user().lastName}}</a>
+</div>

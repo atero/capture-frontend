@@ -1,0 +1,22 @@
+<header>
+  <div class="navbar navbar-fixed-top">
+    <div>
+      <h2>{{title}}</h2>
+      <ul class="nav navbar-nav pull-right">
+
+        <li class="" data-ng-show="auth.isAuthenticated()">
+          <a href="#" data-ng-click="logout()">Logout</a>
+        </li>
+
+        <li class="" data-ui-sref-active="active" data-ng-show="auth.isAuthenticated()">
+          <a href="#" data-ui-sref="profile.edit"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="row">
+  <div class="col-sm-12">
+
+  </div>
+</div>
